@@ -55,6 +55,20 @@ What is the output of the following code? explain your answer.
 
 2) Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 into the hash map with collisions resolved by separate chaining. Let the hash table have a length m = 9, and let the hash function be k mod m.
 
+| Cell | Val   | Notes		                                      |  | Val | K mod M |
+|------|-------|--------------------------------------------------|  |-----| --------|
+| 0	   | 22	   |	                                              |  | 10  | % 11 = 10 |
+| 1	   | 88	   | collides with 22 so moves to next available slot |	 | 22  | % 11 = 0 |
+| 2	   | empty |		                                          |  | 31  | % 11 = 9 |
+| 3	   | empty |		                                          |  | 4   | % 11 = 4 |
+| 4	   | 4	   |	                                              |  | 15  | % 11 = 4 |
+| 5	   | 15	   | collides with 4 so moves to next available slot  |	 | 28  | % 11 = 6 |
+| 6	   | 28	   |	                                              |  | 17  | % 11 = 6 |
+| 7	   | 17	   | collides with 28 so moves to next available slot |	 | 88  | % 11 = 0 |
+| 8	   | 59	   | collides with 15 so moves to next available slot |	 | 59  | % 11 = 4 |
+| 9	   | 31	   |			                                      |
+| 10   | 10	   |		                                          |
+
 ### 4. Remove duplicates
 
 Implement a function to delete all duplicated characters in a string and keep only the first occurrence of each character. For example, if the input is string “google”, the result after deletion is “gole”. Test your program with a sentence as well such as "google all that you think can think of".
